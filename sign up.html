@@ -1,0 +1,108 @@
+
+<html>
+    <head>
+        <title>SING UP</title>
+       <script>  
+  
+           
+           function validate_name_ps() {
+               var name=document.ana.fname.value;  
+               var password=document.ana.ps.value;  
+               var firstpassword = document.ana.ps.value;
+               var secondpassword = document.ana.re_ps.valu
+               if (name==null || name==""){  
+                   alert("plz enter firstname.");  
+                   return false;  
+               }else if(firstpassword.length<6){  
+                   alert("Password must be at least 6 ");  
+                   return false;  
+               }else if (firstpassword == secondpassword) {
+                   return true;
+               }
+               else {
+                   alert("password & re-password not same!");
+                   return false;
+               }
+           }
+           
+   
+           function Checktv(val){
+               var element=document.getElementById('others');
+               if (val == 'pick best tv skow<' || val == 'others')
+                   element.style.display='block';
+               else  
+                   element.style.display='none';
+           }
+           function enable_text(status) {
+               status = !status;
+               document.f1.other_text.disabled = status;
+               element.style.display = 'none';
+           }
+</script>  
+    </head>
+    <body>
+	
+<frameset bgcolor="blue" rows="5%,*,5%">
+  <frame src="frame_a.htm">
+  <a href="index.html"> <img align="left" src = "kb-logo2.png" width = "80" height = "80" alt = "kingbay logo"> </a>
+  <h1 align = "center" > king bay movies </h1>
+
+</frameset>
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <form name="ana"  onsubmit=" validate_name_ps()">
+first name: <input type="text" name="fname" value=""><br/>
+        <br />
+
+last name : <input type="text" name="lname" value=""><br/>
+        <br />
+e-mail :   <input type="email" name="ne" value=""><br/>
+<br />
+ password: <input type="password" name="ps" ><br/>
+<br />
+ re-enter password: <input type="password" name="re_ps" ><br/>
+<br />
+ phone:<input type="phone" name="PH"><br/>
+    <br />
+
+  gender <input type="radio" name="gender" value="male" > Male  <input type="radio" name="gender" value="female"> Female<br/>
+
+ <br />
+        
+    Country <select name="Country" onchange="Checktv(this.value)";>
+    <option value="ksa">Saudi Arabia</option>
+    <option value="uae">United Arab Emirates</option>
+    <option value="pki">Pakistan</option>
+    <option value="egp">Egypt</option>
+  </select>
+       
+        <br/>
+        <br/>
+
+best moives : <input type="checkbox" name="moana"  >moana
+<input type="checkbox" name="doctor strenge"  >doctor strenge   
+  <input type="checkbox" name="moonlight"  >moonlight
+   <input type="checkbox" name=others onclick="enable_text(this.checked)"  >others
+<input type=text name=other_text>
+<br/>
+<br/>
+       best tv skow:    <select name="color" onchange="Checktv(this.value);"> 
+     
+    <option value="vikings">vikings</option>
+    <option value="got">game of the throns</option>
+    <option value="bd">breaking bad</option>
+    <option value="tno">the night of</option>
+    <option value="others">others</option>
+  </select>
+<input type="text" name="others" id="others" style='display:none;' >
+        <br />
+        <input type="submit" value="Submit">
+       
+    </form>
+
+        
+	
+	
+    </body>
+</html>
